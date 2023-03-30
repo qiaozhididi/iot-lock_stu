@@ -1,0 +1,7 @@
+beetl:
+  templatesPath: /templates
+  enabled: true
+beetl-beetlsql:
+  dev: true
+server:
+  port: 8097
