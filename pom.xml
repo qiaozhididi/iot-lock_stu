@@ -62,6 +62,26 @@
             <scope>true</scope>
         </dependency>
         <!-- SpringBoot 开发者工具 end-->
+        <!-- MySQL 驱动 Start-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.31</version>
+        </dependency>
+        <!-- MySQL 驱动 End-->
+        <!-- mybatis start -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.2.6</version>
+        </dependency>
+        <!-- mybatis end -->
+
     </dependencies>
 
     <build>
@@ -93,6 +113,16 @@
                     <configuration>
                         <fork>true</fork>
                         <finalName>${project.artifactId}</finalName>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.flywaydb</groupId>
+                    <artifactId>flyway-maven-plugin</artifactId>
+                    <version>7.8.2</version>
+                    <configuration>
+                        <url>jdbc:mysql://localhost:3308/iotlock?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false</url>
+                        <user>iotlock</user>
+                        <password>R5K5r9727@t</password>
                     </configuration>
                 </plugin>
             </plugins>
