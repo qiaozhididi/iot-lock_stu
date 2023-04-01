@@ -1,4 +1,5 @@
 # 物联网云平台设计与开发（持续更新中...)
+<div style="text-align: center;"><p>最近一次更新时间:2023/04/01</p></div>
 
 #### 开发环境：
 
@@ -26,3 +27,15 @@ https://heis.gitee.io/docs/iot-cloud-platform/
 <a href="https://heis.gitee.io/docs/iot-cloud-platform/iot-cp-06/"><li>Part 6 - 物联网云平台消息机制</li></a>
 </ol>
 
+## 项目进度
+
+#### 划线代表已完成
+
+<ul>
+<li><s>Part 1 - 物联网云平台开发环境搭建</s></li>
+<li><s>Part 2 - 物联网云平台总体分析与设计</s></li>
+<li><s>Part 3 - 物联网云平台开发框架搭建</s></li>
+<li><s>Part 4 - 物联网云平台基础模块开发实战</s></li>
+<li>Part 5 - 物联网云平台数据管理开发实战</li> 
+<li>Part 6 - 物联网云平台消息机制</li>
+</ul>
