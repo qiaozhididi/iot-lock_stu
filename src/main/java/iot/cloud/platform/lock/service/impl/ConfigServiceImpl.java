@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ConfigServiceImpl implements ConfigService {
 
-    @Autowired(required = false)
+    @Autowired
     private ConfigMapper configMapper;
 
     @Override
