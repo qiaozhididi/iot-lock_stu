@@ -3,7 +3,7 @@
 <div style="text-align: center;"><p>最近一次更新时间:2023/04/02</p></div>
 注意:本项目仅为Part3 Part4的项目源码。Part1 Part2请自行实操。
 
-如需查看Part5源码请跳转到：<a>https://gitee.com/qiaozhididi/iot-cloud
+如需查看Part5源码请跳转到：<a>https://gitee.com/qiaozhididi/iot-cloud_stu
 
 ## 项目简介
 
