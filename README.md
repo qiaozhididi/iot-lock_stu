@@ -1,5 +1,11 @@
 # 物联网云平台设计与开发（持续更新中...)
+
 <div style="text-align: center;"><p>最近一次更新时间:2023/04/01</p></div>
+注意:本项目仅为Part3 Part4的项目源码。Part1 Part2请自行实操。
+
+如需查看Part5源码请跳转到：<a>https://gitee.com/qiaozhididi/iot-cloud
+
+## 项目简介
 
 #### 开发环境：
 
@@ -13,9 +19,7 @@
 - Navicat 15.0.24
 - Postman 8.12.1
 
-## 项目简介
-
-## 根据文档进行开发
+## 根据以下文档进行开发
 
 https://heis.gitee.io/docs/iot-cloud-platform/
 <ol>
@@ -31,11 +35,20 @@ https://heis.gitee.io/docs/iot-cloud-platform/
 
 #### 划线代表已完成
 
+### Part3:物联网云平台开发框架搭建
+
 <ul>
-<li><s>Part 1 - 物联网云平台开发环境搭建</s></li>
-<li><s>Part 2 - 物联网云平台总体分析与设计</s></li>
-<li><s>Part 3 - 物联网云平台开发框架搭建</s></li>
-<li><s>Part 4 - 物联网云平台基础模块开发实战</s></li>
-<li>Part 5 - 物联网云平台数据管理开发实战</li> 
-<li>Part 6 - 物联网云平台消息机制</li>
+<li><s>3.1 创建名称为 iot-lock 的 Maven 项目</s></li>
+<li><s>3.2 编写一个模拟密码解锁的案例</s></li>
+<li><s>3.3 iot-lock 项目引入 Springboot 搭建 Web 项目</s></li>
 </ul>
+
+### Part4:物联网云平台基础模块开发实战
+
+<ul>
+<li><s>4.1 智能锁项目（iot-lock）实现数据库管理功能</s></li>
+<li><s>4.2 智能锁项目（iot-lock）实现读取配置表</s></li>
+<li><s>4.3 智能锁项目（iot-lock）实现使用数据库密码解锁</s></li>
+</ul>
+
+
