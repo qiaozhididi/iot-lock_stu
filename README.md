@@ -4,8 +4,6 @@
 
 ### <div style="text-align: center;">代码更新到Part6</div>
 
-#### <div style="text-align: center;">（6.3仅实现MQTT发送回复，尚未实现修改密码功能）</div>
-
 注意:本项目仅为Part3 Part4 Part6的项目源码。Part1 Part2请自行实操。
 
 如需查看Part5源码请跳转到：<a>https://gitee.com/qiaozhididi/iot-cloud_stu
@@ -57,6 +55,5 @@ https://heis.gitee.io/docs/iot-cloud-platform/
 <li><s>6.1 安装 EMQX 和 MQTTX</s></li>
 <li><s>6.2 iot-lock 项目配置 MQTT 客户端</s></li>
 <li>6.3 iot-lock 项目实现修改固定密码功能</li>
-<li>6.4 iot-lock 项目实现新增临时密码功能</li>
 
 
