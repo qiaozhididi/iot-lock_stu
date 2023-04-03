@@ -10,4 +10,14 @@ spring:
     url: jdbc:mysql://localhost:3308/iotlock?useUnicode=true&characterEncoding=UTF-8&useSSL=false&allowMultiQueries=true
     username: iotlock
     password: R5K5r9727@t
-
+mqtt:
+  host: tcp://localhost:1883
+  username: iotweb
+  password: iotweb
+  qos: 1
+  client-id: lock999
+  topic:
+    post: /iot/cloud/devices/post
+    post_reply: /iot/cloud/devices/post_reply
+    receive: /iot/cloud/devices/receive
+    receive_reply: /iot/cloud/devices/receive_reply
