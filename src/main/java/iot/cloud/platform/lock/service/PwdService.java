@@ -13,4 +13,6 @@ public interface PwdService {
      */
     boolean verifyPwd(String pwd);
 
+    //TODO: 新增修改固定密码方法resetFixedPwd
+    boolean resetFixedPwd(String pwd);
 }

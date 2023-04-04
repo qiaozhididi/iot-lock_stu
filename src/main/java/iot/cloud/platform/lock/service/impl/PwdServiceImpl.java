@@ -3,11 +3,14 @@ package iot.cloud.platform.lock.service.impl;
 import iot.cloud.platform.lock.entity.PwdEntity;
 import iot.cloud.platform.lock.mapper.PwdMapper;
 import iot.cloud.platform.lock.service.PwdService;
+import iot.cloud.platform.lock.vo.ResMsg;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.regex.Pattern;
 
 @Service
 public class PwdServiceImpl implements PwdService {
@@ -35,6 +38,18 @@ public class PwdServiceImpl implements PwdService {
             if (result) {
                 break;
             }
+        }
+        return result;
+    }
+
+    //TODO: 新增修改固定密码方法resetFixedPwd
+    @Override
+    public boolean resetFixedPwd(String pwd) {
+        String tpwd = StringUtils.trim(pwd);
+        boolean result = false;
+        Pattern pattern = Pattern.compile("[0-9]{6,18}");//正则表达式校验
+        if (pattern.matcher(tpwd).matches()) {
+            result = true;
         }
         return result;
     }
