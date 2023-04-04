@@ -78,7 +78,25 @@ public class MqttConsumerCallback implements MqttCallbackExtended {
             }
 
             //TODO:请完善此处代码，完成实验6.3,6.4的功能。
-            ResMsg returnVal = null;
+//            ResMsg returnVal = null;
+            ResMsg returnVal = new ResMsg();
+            String pwd = resvMsg.getData().get("oPwd").toString();
+            if (pwdService.resetFixedPwd(pwd)) {
+                if (pwdService.verifyPwd(pwd)) {
+                    returnVal.setErrcode("0");
+                    returnVal.setErrmsg("更新密码成功");
+                    returnVal.setData(pwd);
+                } else {
+                    returnVal.setErrcode("4002");
+                    returnVal.setErrmsg("更新密码失败，新密码格式错误");
+                    returnVal.setData(pwd);
+                }
+            } else {
+                returnVal.setErrcode("4001");
+                returnVal.setErrmsg("更新密码失败，旧密码错误");
+                returnVal.setData(pwd);
+            }
+
 
             MqttMsg<ResMsg> replyMsg = new MqttMsg();
             replyMsg.setEventId(resvMsg.getEventId());
