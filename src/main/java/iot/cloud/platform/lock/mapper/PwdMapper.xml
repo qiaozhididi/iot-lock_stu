@@ -5,4 +5,8 @@
         <!-- 请自行完成SQL的编写 -->
         select * from pwd where pwd = #{pwd}
     </select>
+    <select id="updatePwd" resultType="iot.cloud.platform.lock.entity.PwdEntity">
+        <!-- 请自行完成SQL的编写 -->
+        update pwd set pwd = #{nPwd} where pwd = #{oPwd}
+    </select>
 </mapper>

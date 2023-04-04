@@ -2,8 +2,8 @@ package iot.cloud.platform.lock.mqtt;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import iot.cloud.platform.lock.entity.PwdEntity;
 import iot.cloud.platform.lock.service.PwdService;
-import iot.cloud.platform.lock.utils.DateUtil;
 import iot.cloud.platform.lock.utils.ExcptUtil;
 import iot.cloud.platform.lock.vo.MqttMsg;
 import iot.cloud.platform.lock.vo.ResMsg;
@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,6 +39,7 @@ public class MqttConsumerCallback implements MqttCallbackExtended {
 
     @Autowired
     private PwdService pwdService;
+
 
     /**
      * 断开重连
@@ -80,21 +80,24 @@ public class MqttConsumerCallback implements MqttCallbackExtended {
             //TODO:请完善此处代码，完成实验6.3,6.4的功能。
 //            ResMsg returnVal = null;
             ResMsg returnVal = new ResMsg();
-            String pwd = resvMsg.getData().get("oPwd").toString();
-            if (pwdService.resetFixedPwd(pwd)) {
-                if (pwdService.verifyPwd(pwd)) {
+
+            String oPwd = resvMsg.getData().get("oPwd").toString();
+            String nPwd = resvMsg.getData().get("nPwd").toString();
+            if (pwdService.isValidPwd(oPwd)) {
+                if (pwdService.verifyPwd(oPwd)) {
                     returnVal.setErrcode("0");
                     returnVal.setErrmsg("更新密码成功");
-                    returnVal.setData(pwd);
+                    returnVal.setData(oPwd);
+                    pwdService.resetFixedPwd(oPwd, nPwd);
                 } else {
                     returnVal.setErrcode("4002");
                     returnVal.setErrmsg("更新密码失败，新密码格式错误");
-                    returnVal.setData(pwd);
+                    returnVal.setData(oPwd);
                 }
             } else {
                 returnVal.setErrcode("4001");
                 returnVal.setErrmsg("更新密码失败，旧密码错误");
-                returnVal.setData(pwd);
+                returnVal.setData(oPwd);
             }
 
 
