@@ -42,9 +42,9 @@ public class PwdServiceImpl implements PwdService {
         return result;
     }
 
-    //TODO: 新增修改固定密码方法resetFixedPwd
+    //密码正则验证
     @Override
-    public boolean resetFixedPwd(String pwd) {
+    public boolean isValidPwd(String pwd) {
         String tpwd = StringUtils.trim(pwd);
         boolean result = false;
         Pattern pattern = Pattern.compile("[0-9]{6,18}");//正则表达式校验
@@ -52,5 +52,16 @@ public class PwdServiceImpl implements PwdService {
             result = true;
         }
         return result;
+    }
+
+    //TODO: 新增修改固定密码方法resetFixedPwd
+    @Override
+    public PwdEntity resetFixedPwd(String oPwd, String nPwd) {
+        PwdEntity pwd = new PwdEntity();
+        pwd.setPwd(oPwd);
+        if (isValidPwd(oPwd)) {
+            pwdMapper.updatePwd(nPwd, oPwd);
+        }
+        return pwd;
     }
 }

@@ -2,6 +2,7 @@ package iot.cloud.platform.lock.mapper;
 
 import iot.cloud.platform.lock.entity.PwdEntity;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -18,5 +19,6 @@ public interface PwdMapper {
      * @return
      */
     List<PwdEntity> getPwd(String pwd);
+    String updatePwd(@Param("nPwd")String nPwd, @Param("oPwd")String oPwd);
 }
 
