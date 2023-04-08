@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -80,7 +81,7 @@ public class MqttConsumerCallback implements MqttCallbackExtended {
             //TODO:请完善此处代码，完成实验6.3,6.4的功能。
 //            ResMsg returnVal = null;
             ResMsg returnVal = new ResMsg();
-
+            //修改固定密码
             String oPwd = resvMsg.getData().get("oPwd").toString();
             String nPwd = resvMsg.getData().get("nPwd").toString();
             if (pwdService.isValidPwd(nPwd)) {
@@ -98,6 +99,23 @@ public class MqttConsumerCallback implements MqttCallbackExtended {
                 returnVal.setErrcode("4002");
                 returnVal.setErrmsg("更新密码失败，新密码格式错误");
             }
+            //新增临时密码
+//            String pwd = resvMsg.getData().get("pwd").toString();
+//            String expiredTime = resvMsg.getData().get("expiredTime").toString();
+//            if (pwdService.isValidPwd(pwd)) {
+//                if (pwdService.verifyPwd(pwd)) {
+//                    returnVal.setErrcode("0");
+//                    returnVal.setErrmsg("新增临时密码成功");
+//                    pwdService.addTempPwd(pwd, new Date(Long.parseLong(expiredTime)));
+//                    returnVal.setData(pwd);
+//                } else {
+//                    returnVal.setErrcode("4003");
+//                    returnVal.setErrmsg("新增临时密码失败");
+//                }
+//            } else {
+//                returnVal.setErrcode("4002");
+//                returnVal.setErrmsg("新增临时密码失败，密码格式错误");
+//            }
 
 
             MqttMsg<ResMsg> replyMsg = new MqttMsg();

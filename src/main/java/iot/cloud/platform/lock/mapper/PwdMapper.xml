@@ -9,4 +9,9 @@
         <!-- 请自行完成SQL的编写 -->
         update pwd set pwd = #{nPwd} where pwd = #{oPwd}
     </select>
+    <!--    <select id="addTempPwd" resultType="iot.cloud.platform.lock.entity.PwdEntity">-->
+    <!--        &lt;!&ndash; 请自行完成SQL的编写 &ndash;&gt;-->
+    <!--        insert into pwd (pwd, expired_time) values (#{pwd},#{expiredTime})-->
+    <!--    </select>-->
+
 </mapper>

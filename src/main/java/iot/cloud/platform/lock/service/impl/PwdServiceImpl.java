@@ -64,4 +64,21 @@ public class PwdServiceImpl implements PwdService {
         }
         return pwd;
     }
+
+    //TODO: 新增临时密码方法addTempPwd
+//    @Override
+//    public ResMsg addTempPwd(String pwd, Date expiredTime) {
+//        ResMsg resMsg = new ResMsg();
+//        if (isValidPwd(pwd)) {
+//            PwdEntity pwdEntity = new PwdEntity();
+//            pwdEntity.setPwd(pwd);
+//            pwdEntity.setExpired_time(expiredTime);
+//            pwdEntity.setType(PWD_TYPE_TEMP);
+//            pwdEntity.setStatus("enabled");
+//            pwdMapper.addTempPwd(pwd, expiredTime);
+//        } else {
+//            return resMsg;
+//        }
+//        return resMsg;
+//    }
 }
