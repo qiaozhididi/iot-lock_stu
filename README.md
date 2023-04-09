@@ -1,6 +1,6 @@
 # 物联网云平台设计与开发（持续更新中...)
 
-<div style="text-align: center;"><p>最近一次更新时间:2023/04/04</p></div>
+<div style="text-align: center;"><p>最近一次更新时间:2023/04/09</p></div>
 
 ### <div style="text-align: center;">代码更新到Part6</div>
 
